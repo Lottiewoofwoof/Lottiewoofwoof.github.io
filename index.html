@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Sofia's Dog Quiz </title>
+    <link rel="icon" type="image/x-icon" href="tabicon.png">
+    
+     <body style="background-color:#c7ecff;">
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,500;1,400&family=Plus+Jakarta+Sans:wght@500&display=swap" rel="stylesheet">
+            <style>
+            body {
+                font-family: 'Mali', cursive;
+font-family: 'Plus Jakarta Sans', sans-serif;
+;
+            }
+            </style>
+            </head>
+    
+</head>
+<body>
+    <h1>🐶 The Official Dog Quiz 🐶</h1>
+    <p>Let's see how much you really know about Dogs?</p>
+
+     <!--Timer starts!!-->
+    <p id="timer">1:30</p> <p> Hurry, before the timer runs out! </p>
+
+
+    <div id="quiz">
+        <!-- Quiz Questions -->
+        <h2>Question 1: What is the smallest dog breed?</h2>
+        <label>
+            <input type="radio" name="q1" value="a"> Pomeranian
+            
+        </label>
+        <label>
+            <input type="radio" name="q1" value="b"> Toy Poodle
+        </label>
+        <label>
+            <input type="radio" name="q1" value="c"> Chihuahua
+        </label>
+        <label>
+            <input type="radio" name="q1" value="d"> Pug
+            <img src="quizquestion1.png" class="w3-circle" alt="Question 1" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+
+        <h2>Question 2: Which dog breed is the fastest?</h2>
+        <label>
+            <input type="radio" name="q2" value="a"> Greyhound
+        </label>
+        <label>
+            <input type="radio" name="q2" value="b"> Doberman
+        </label>
+        <label>
+            <input type="radio" name="q2" value="c"> Dalmatian
+        </label>
+        <label>
+            <input type="radio" name="q2" value="d"> Border Collie 
+
+            <img src="quizquestion2.png" class="w3-circle" alt="Question 2" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+
+        <h2>Question 3: Queen Elizabeth owned what dog?</h2>
+        <label>
+            <input type="radio" name="q3" value="a"> German Shepherd
+        </label>
+        <label>
+            <input type="radio" name="q3" value="b"> Corgi
+        </label>
+        <label>
+            <input type="radio" name="q3" value="c"> Dachshund
+        </label>
+        <label>
+            <input type="radio" name="q3" value="d"> Bichon Frise 
+            <img src="quizquestion3.png" class="w3-circle" alt="Question 3" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+
+        <h2>Question 4: Normal Adult dogs have how many teeth?</h2>
+        <label>
+            <input type="radio" name="q4" value="a"> 24
+        </label>
+        <label>
+            <input type="radio" name="q4" value="b"> 16
+        </label>
+        <label>
+            <input type="radio" name="q4" value="c"> 42
+        </label>
+        <label>
+            <input type="radio" name="q4" value="d"> 32
+            <img src="quizquestion4.png" class="w3-circle" alt="Question 4" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+
+        <h2>Question 5: What is the most common training command taught to dogs?</h2>
+        <label>
+            <input type="radio" name="q5" value="a"> Stay
+        </label>
+        <label>
+            <input type="radio" name="q5" value="b"> Beg
+        </label>
+        <label>
+            <input type="radio" name="q5" value="c"> Sit
+        </label>
+        <label>
+            <input type="radio" name="q5" value="d"> Lie down
+            <img src="quizquestion5.png" class="w3-circle" alt="Question 5" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+
+        <h2>Question 6: What is the tallest breed of dog?</h2>
+        <label>
+            <input type="radio" name="q6" value="a"> St. Bernard
+        </label>
+        <label>
+            <input type="radio" name="q6" value="b"> Giant Schnauzer
+        </label>
+        <label>
+            <input type="radio" name="q6" value="c"> Irish Wolfhound
+        </label>
+        <label>
+            <input type="radio" name="q6" value="d"> Great Dane
+            <img src="quizquestion6.png" class="w3-circle" alt="Question 6" style="width: 50;" height="200">
+            <style>
+                img {
+  display: block;
+  margin-right: auto;
+                }
+            </style>
+        </label>
+    </div>
+    
+    <button id="submit-button">Submit Answers</button>
+    <p id="result"></p>
+
+    <script>
+        // Quiz answers!
+        var questions = [
+            {
+                question: "What is the smallest dog breed?",
+                options: ["Pomeranian", "Toy Poodle", "Chihuahua", "Pug"],
+                correctAnswer: "c",
+            },
+            {
+                question: "Which dog breed is the fastest?",
+                options: ["Greyhound", "Doberman", "Dalmatian", "Border Collie"],
+                correctAnswer: "a",
+            },
+            {
+                question: "Queen Elizabeth owned what dog?",
+                options: ["German Shepherd", "Corgi", "Dachshund", "Bichon Frise"],
+                correctAnswer: "b",
+            },
+            {
+                question: "Normal adult dogs have how many teeth?",
+                options: ["24", "16", "42", "32"],
+                correctAnswer: "d",
+            },
+            {
+                question: "What is the most common training command taught to dogs?",
+                options: ["Stay", "Beg", "Sit", "Lie down"],
+                correctAnswer: "c",
+            },
+            {
+                question: "What is the tallest breed of dog?",
+                options: ["St. Bernard", "Giant Schnauzer", "Irish Wolfhound", "Great Dane"],
+                correctAnswer: "d",
+            },
+        ];
+        //Timer stops once pressed submit
+        var submitButton = document.getElementById("submit-button");
+        var resultText = document.getElementById("result");
+        var timerDisplay = document.getElementById("timer");
+        var timeLimit = 90; 
+        var timerInterval;
+
+        function startTimer() {
+            timerInterval = setInterval(function() {
+                var minutes = Math.floor(timeLimit / 90);
+                var seconds = timeLimit % 90;
+               
+                timerDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                if (timeLimit === 0) {
+                    clearInterval(timerInterval); 
+                    timerDisplay.textContent = "0:00"; 
+                    alert("Time's up! Your dog knowledge isnt top notch 😔");
+                    checkAnswers();
+                }
+                timeLimit--;
+            }, 1000);
+        }
+
+        function checkAnswers() {
+            var userAnswers = [];
+            var score = 0;
+
+            for (let i = 1; i <= 6; i++) {
+                var selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    userAnswers.push(selectedOption.value);
+                    if (selectedOption.value === questions[i - 1].correctAnswer) {
+                        score++;
+                    }
+                }
+            }
+
+            if (userAnswers.length === 6) {
+                resultText.textContent = `You scored ${score} out of 6!, You finished before the timer, not bad, check your score 💕!!`;
+            } else {
+                resultText.textContent = "Aww your all out of time, try again 😔";
+            }
+        }
+
+        submitButton.addEventListener("click", function() {
+            clearInterval(timerInterval); 
+            checkAnswers();
+        });
+
+        
+        startTimer();
+
+        submitButton.addEventListener("click", function() {
+            clearInterval(timerInterval);
+            checkAnswers();
+        });
+
+      //Checking answers 
+        function checkAnswers() {
+            var userAnswers = [];
+            var score = 0;
+
+            for (let i = 1; i <= 6; i++) {
+                var selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    userAnswers.push(selectedOption.value);
+                    if (selectedOption.value === questions[i - 1].correctAnswer) {
+                        score++;
+                        //Correct answers are highlighted green!
+                        selectedOption.parentElement.style.backgroundColor = "lightgreen";
+                    } else {
+                        //Wrong answers are highlighted red!!
+                        selectedOption.parentElement.style.backgroundColor = "lightcoral";
+                    }
+                }
+            }
+
+            if (userAnswers.length === 6) {
+                resultText.textContent = `You scored ${score} out of 6! You finished before the timer, not bad, check your score 💕!!`;
+            } else {
+                resultText.textContent = "Aww you're all out of time, try again 😔";
+            }
+        }
+
+        
+    </script>
+    </script>
+</body>
+<p> Thank you!</p>
